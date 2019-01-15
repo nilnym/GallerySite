@@ -1,0 +1,67 @@
+﻿@model ImageUploadVM
+@{
+    ViewBag.Title = "Upload new file";
+}
+
+<div class="row">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+@if (Model.SomethingWentWrong)
+{
+    <div class="row">
+        <div class="alert alert-warning" role="alert">
+            Something went wrong...
+        </div>
+    </div>
+}
+<div class="row">
+    <form enctype="multipart/form-data" asp-controller="image" asp-action="upload">
+        <fieldset class="form-group">
+            <legend>Select file</legend>
+            <div class="form-group">
+                <label asp-for="ImageUrl"></label>
+                <input class="form-control" asp-for="ImageUrl" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="File"></label>
+                <input class="form-control-file" asp-for="File" />
+                <span asp-validation-for="File" class="text-danger"></span>
+                <p>* Overrides upload from URL</p>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend>Enter information</legend>
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input class="form-control" asp-for="Title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="GalleryId"></label>
+                <select class="form-control" asp-for="GalleryId" asp-items="Model.Galleries">
+                    <option value="">Select a gallery</option>
+                </select>
+                <span asp-validation-for="GalleryId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Tags"></label>
+                <input class="form-control" asp-for="Tags" />
+                <span asp-validation-for="Tags" class="text-danger"></span>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Upload" />
+        </div>
+    </form>
+</div>
+@section scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+}

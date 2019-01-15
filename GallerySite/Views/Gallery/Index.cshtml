@@ -1,0 +1,28 @@
+﻿@model GalleryIndexVM
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-columns">
+            @foreach (var item in Model.Images)
+            {
+                <div class="card">
+                    <a asp-controller="image" asp-action="view" asp-route-id="@item.Id"><img src="/images/@item.Url" class="card-img-top img-fluid" /></a>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a asp-controller="image" asp-action="view" asp-route-id="@item.Id">@item.Title</a>
+                        </h5>
+                        <p class="card-text">
+                            (from <a asp-controller="gallery" asp-action="view" asp-route-id="@item.GalleryId">@item.Gallery.Name</a>)
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,8 @@
+﻿@model TagListVM
+
+<li class="tags nav-item">
+    @foreach (var tag in Model.Tags)
+    {
+        <a asp-controller="tag" asp-action="@tag.Name.ToLower()" class="btn btn-dark btn-sm">@tag.Name</a>
+    }
+</li>

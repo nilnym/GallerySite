@@ -1,0 +1,6 @@
+﻿@model GalleryListVM
+
+@foreach (var gallery in Model.Galleries)
+{
+    <li class="nav-item"><a asp-controller="gallery" asp-action="view" asp-route-id="@gallery.Id" class="nav-link">@gallery.Name</a></li>
+}

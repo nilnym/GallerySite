@@ -1,0 +1,32 @@
+﻿@model ImageViewVM
+
+<div class="row">
+    <div class="card max-card mt-2">
+        <div class="card-header">
+            <h2>@Model.Title</h2>
+        </div>
+
+        <img class="card-image-top img-fluid" src="/images/@Model.ImageUrl" />
+
+        <div class="card-body">
+            <p class="card-text">From <a asp-controller="gallery" asp-action="view" asp-route-id="@Model.Gallery.Id">@Model.Gallery.Name</a></p>
+            @if (Model.Tags.Length > 0)
+            {
+                <p class="card-text">
+                    @foreach (var tag in Model.Tags)
+                    {
+                        <a asp-controller="tag" asp-action="@tag.Name" class="btn btn-sm btn-dark">@tag.Name</a>
+                    }
+                </p>
+            }
+            <p class="card-text"><small class="text-muted">Uploaded @Model.Created.ToShortDateString()</small></p>
+        </div>
+        <div class="card-footer bg-light">
+            <form class="form-inline" asp-controller="image" asp-action="delete">
+                <a asp-controller="image" asp-action="edit" asp-route-id="@Model.Id" class="btn btn-primary mr-2" role="button">Update</a>
+                <input type="hidden" asp-for="Id" />
+                <input class="btn btn-danger" type="submit" value="Delete" />
+            </form>
+        </div>
+    </div>
+</div>

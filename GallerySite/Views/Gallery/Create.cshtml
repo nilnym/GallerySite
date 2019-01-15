@@ -1,0 +1,25 @@
+﻿@model GalleryCreateVM
+@{
+    ViewBag.Title = "Create new gallery";
+}
+
+<div class="row">
+    <h2>@ViewBag.Title</h2>
+</div>
+
+<div class="row">
+    <form asp-controller="gallery" asp-action="create">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Create" />
+    </form>
+</div>
+
+@section scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+}

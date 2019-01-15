@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GallerySite", "GallerySite\GallerySite.csproj", "{F18AC4FA-A530-4520-BD53-5C515D51E2C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F18AC4FA-A530-4520-BD53-5C515D51E2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18AC4FA-A530-4520-BD53-5C515D51E2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18AC4FA-A530-4520-BD53-5C515D51E2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18AC4FA-A530-4520-BD53-5C515D51E2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EC0EB97-2968-4494-94CB-EC94188D4C93}
+	EndGlobalSection
+EndGlobal
